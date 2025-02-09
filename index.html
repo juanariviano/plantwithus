@@ -38,6 +38,32 @@
       <button><a href="">create event</a></button>
     </div>
 
+    <div id="donationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>donation settings</h3>
+        <div class="donation-content">
+          <div class="donation-content2">
+            <label>payment</label>
+            <select id="paymentMethod">
+              <option value="Bank Transfer">bank transfer</option>
+              <option value="e-Wallet">e-wallet</option>
+              <option value="Credit Card">credit card</option>
+            </select>
+            <label>idr</label>
+            <input
+              type="number"
+              id="donationAmount"
+              placeholder="Enter amount"
+              min="1"
+            />
+
+            <button onclick="confirmDonation()">Confirm Donation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-1">
       <div class="c11">
         <img src="https://picsum.photos/491/493?random=1" alt="" />
@@ -49,7 +75,20 @@
           quidem minima earum commodi saepe nam explicabo voluptate magnam sunt
           pariatur? Magni, ex?
         </p>
-        <button><a href="">donate</a></button>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Donation Button -->
+        <button onclick="openModal()">donate</button>
+
+        <!-- Donation Status -->
+        <p>
+          goal: <span id="raisedAmount">0</span> /
+          <span id="goalAmount">1000</span>
+        </p>
       </div>
     </div>
 
@@ -69,15 +108,15 @@
     </div>
 
     <footer>
-        <a href="./index.html"><img src="" alt="logo plant with us" /></a>
-        <a href="">event</a>
-        <a href="">donate</a>
-        <a href="">archive</a>
+      <a href="./index.html"><img src="" alt="logo plant with us" /></a>
+      <a href="">event</a>
+      <a href="">donate</a>
+      <a href="">archive</a>
     </footer>
 
     <div class="footer-plus">
-        <a href="">privacy policy</a>
-        <p>plant with us</p>
+      <a href="">privacy policy</a>
+      <p>plant with us</p>
     </div>
 
     <script src="script.js"></script>

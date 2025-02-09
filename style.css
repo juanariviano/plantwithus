@@ -66,6 +66,91 @@ body {
     display: none;
 }
 
+/* pop up */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 300px;
+    height: 320px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+.donation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 25px;
+}
+
+.donation-content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-content h3 {
+    margin: 15px;
+    margin-bottom: 25px;
+    color: #674636;
+}
+
+.donation-content label {
+    /* background-color: rebeccapurple; */
+    text-align: left;
+}
+
+.donation-content button {
+    font-family: "Quicksand", serif;
+    border: none;
+    background-color: #AAB396;
+    padding: 10px 25px;
+    border-radius: 3px;
+    width: 160px;
+    margin-top: 10px;
+}
+
+.donation-content select {
+    font-family: "Quicksand", serif;
+    border-radius: 3px;
+    padding: 15px 25px;
+    width: 220px;
+    border: 0;
+    height: 50px;
+    background-color: #F7EED3;
+}
+
+input {
+    font-family: "Quicksand", serif;
+    border-radius: 3px;
+    padding: 15px 25px;
+    width: 170px;
+    height: 20px;
+    border: 0;
+    background-color: #F7EED3;
+}
+
 /* Home */
 
 .first-card {
@@ -135,6 +220,8 @@ body {
     margin-top: 10px;
     padding: 12px 23px;
     border-radius: 5px;
+    color: white;
+    font-size: 17px;
 }
 
 .container-1 .c12 button a {
@@ -176,6 +263,8 @@ body {
     margin-top: 10px;
     padding: 12px 23px;
     border-radius: 5px;
+    color: white;
+    font-size: 17px;
 }
 
 .container-2 .c22 button a {
@@ -183,6 +272,7 @@ body {
     color: white;
     font-size: 17px;
 }
+
 
 footer {
     background-color: #674636;
