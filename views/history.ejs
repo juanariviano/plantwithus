@@ -14,7 +14,7 @@
   </head>
   <body>
     <section id="header">
-      <a href="./index.html"><img src="" alt="logo plant with us" /></a>
+      <a href="/"><img src="./assets/plantwithus.png" alt="logo plant with us" /></a>
 
       <div>
         <ul id="navbar">
@@ -35,62 +35,46 @@
       <h2>donation history</h2>
     </div>
 
-    <div class="history-content">
-      <h2>event title</h2>
-      <p>ended on 02.07.25</p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla et
-        tenetur facilis sunt ex architecto ipsum quam dicta perferendis autem,
-        odit mollitia earum harum maxime? Illum eveniet maiores ab sed.
-      </p>
-      <button>check result</button>
-    </div>
-
-    <div class="history-content">
-      <h2>event title</h2>
-      <p>ended on 02.07.25</p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla et
-        tenetur facilis sunt ex architecto ipsum quam dicta perferendis autem,
-        odit mollitia earum harum maxime? Illum eveniet maiores ab sed.
-      </p>
-      <button>check result</button>
-    </div>
-
-    <div class="history-content">
-      <h2>event title</h2>
-      <p>ended on 02.07.25</p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla et
-        tenetur facilis sunt ex architecto ipsum quam dicta perferendis autem,
-        odit mollitia earum harum maxime? Illum eveniet maiores ab sed.
-      </p>
-      <button>check result</button>
-    </div>
-
-    <div class="history-content">
-      <h2>event title</h2>
-      <p>ended on 02.07.25</p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla et
-        tenetur facilis sunt ex architecto ipsum quam dicta perferendis autem,
-        odit mollitia earum harum maxime? Illum eveniet maiores ab sed.
-      </p>
-      <button>check result</button>
-    </div>
+    <% if (historyEvents && historyEvents.length > 0) { %>
+      <% historyEvents.forEach(event => { %>
+        <div class="history-content" data-event-id="<%= event.id %>">
+          <h2><%= event.event_name %></h2>
+          <% if (event.end_date) { %>
+            <p>Completed on <%= event.end_date %></p>
+          <% } else if (event.first_donation_date) { %>
+            <p>First donated on <%= event.first_donation_date %></p>
+          <% } %>
+          <p><%= event.additional_notes %></p>
+          <div class="donation-status">
+            <p>Raised: IDR <%= event.raised_money.toLocaleString() %> / <%= event.target_money.toLocaleString() %></p>
+          </div>
+          <!-- <% if (event.thumbnail_photo) { %>
+            <img src="/uploads/<%= event.thumbnail_photo %>" alt="Event Thumbnail" class="history-thumbnail">
+          <% } %> -->
+          <button onclick="window.location.href='/archive#event-<%= event.id %>'">check result</button>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <div class="history-content empty-state">
+        <h2>no donation history yet</h2>
+        <p>your donation history will appear here once you make your first donation</p>
+        <!-- <button onclick="window.location.href='/'">Explore Events</button> -->
+      </div>
+    <% } %>
+    
 
     <footer>
-        <a href="./index.html"><img src="" alt="logo plant with us" /></a>
-        <a href="">event</a>
-        <a href="">donate</a>
-        <a href="">archive</a>
-    </footer>
+      <a href="/"><img src="./assets/plantwithus.png" alt="logo plant with us" /></a>
+      <a href="/create">create</a>
+      <a href="/history">history</a>
+      <a href="/archive">archive</a>
+  </footer>
 
     <div class="footer-plus">
         <a href="">privacy policy</a>
         <p>plant with us</p>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
